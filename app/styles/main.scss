@@ -1,0 +1,237 @@
+$icon-font-path: "/bower_components/sass-bootstrap/fonts/";
+
+@import "compass/css3/border-radius";
+@import 'sass-bootstrap/lib/bootstrap';
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* Space out content a bit */
+body {
+    padding-bottom: 30px;
+    
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+    padding-top: 10px;
+    background: rgba(40, 46, 56, .7);
+
+    /* Make the masthead heading the same height as the navigation */
+    h3 {
+        color: rgb(214, 212, 215);
+        margin-top: 0;
+        margin-bottom: 0;
+        line-height: 40px;
+        padding-bottom: 12px;
+    }
+}
+
+/* Custom page footer */
+.footer {
+
+    z-index: -11;
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+    margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+    text-align: center;
+    border-bottom: 1px solid #e5e5e5;
+    .btn {
+        font-size: 21px;
+        padding: 14px 24px;
+    }
+}
+
+/* Supporting marketing content */
+.marketing {
+    margin: 40px 0;
+    p + h4 {
+        margin-top: 28px;
+    }
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .container {
+        max-width: 730px;
+    }
+
+    /* Remove the padding we set earlier */
+    .header,
+    .marketing,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+    }
+    
+    /* Remove the bottom border on the jumbotron for visual effect */
+    .jumbotron {
+        border-bottom: 0;
+    }
+}
+
+/* My new stuff goes below here*/
+
+.main-todo  {
+    height: 60px;
+    background: rgba(40, 46, 56, .7);
+    padding-top: 8px;
+    padding-left: 8px;
+    @include border-radius(6px 6px 0 0);
+}
+
+.main-input {
+    height: 45px;
+    font-size: 20px;
+    display: inline-block;
+    width: 84%;
+    color: gray;
+    border-radius: 6px;
+    box-shadow: inset 0px;
+    border: none;
+    background: rgb(218, 221, 222);
+}
+
+.add-btn {
+    position: absolute;
+    right: 7px;
+    margin-top: 0px;
+    height: 45px;
+    display: inline-block;
+    background: #86B9C9;
+    border: none;
+    outline: none;
+    &:hover {
+       background: #86B9C9;
+    }
+    &:focus {
+        background: #86B9C9;
+    }
+}
+
+.new-item {
+    padding: 10px;
+    position: relative;
+    display: inline-block;
+    min-height: 50px;
+    height: 50%;
+    background: rgba(40, 46, 56, .7);
+    border-top: 2px solid rgba(66, 71, 80, .75);
+
+    &.active {
+        background: rgb(95, 108, 110);
+    }
+}
+
+.cancel-btn {
+    display: inline-block;
+    position: absolute;
+    right: 9px;
+    background: #D79595;
+    border: none;
+    color: #fff;
+
+    &:hover {
+       background: #E1A3A3;
+       color: #fff;
+    }
+
+    &:focus {
+        background: rgb(218, 119, 119);
+    }
+}
+
+.pencil-btn {
+    display: inline-block;
+    position: absolute;
+    right: 53px;
+    border: none;
+}
+
+.check-btn {
+    display: inline-block;
+    position: absolute;
+    right: 97px;
+    background: #79A99E;
+    border: none;
+    color: #fff;
+
+     &:hover {
+       background: #73C3B1;
+       color: #fff;
+    }
+
+    &:focus {
+        background: #79A99E;
+        color: #fff;
+    }
+}
+
+.description {
+    display: inline-block;
+    position: relative;
+    width: 58%;
+    height: 45%;
+    font-size: 16px;
+    color: rgb(214, 212, 215);
+}
+
+.all {
+    background: rgba(48, 57, 60, .75);
+}
+
+.new-box {
+    z-index: -1;
+    background: rgba(31, 33, 35, 0.75);
+    height: 100%;
+    width: 0%;
+    position: absolute;
+    margin: -10px;
+    cursor: pointer;
+    -webkit-transition: all .3s ease;
+
+    &.active {
+    z-index: 1;
+    width: 100%;
+    }
+}
+
+
+.bottom-part {
+    height: 10px;
+    background: rgba(40, 46, 56, .7);
+    
+    @include border-radius(0 0 6px 6px);
+}
+
+.img-responsive {
+        z-index: -5;
+        position: absolute;
+        height: auto;
+        max-width: 100%;
+    }
