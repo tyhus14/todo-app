@@ -20,6 +20,8 @@
             	todoArray.push(todo);
 
             	expect(todoArray).to.contain(todo);
+
+            	
             });
         });
 

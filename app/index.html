@@ -30,7 +30,15 @@
             <div class="container">
                 <div class="left-header">
                     <h3 class="text-muted">Todo List</h3>
+
                 </div>
+                 <div class="count">Total Items:
+                    <div class="total-js"></div>
+                    <span>Completed Items:</span>
+                    <div class="completed-js"></div>
+                    <span>Active Items:</span>
+                    <div class="active-js"></div>
+                 </div>
                 
             </div>
         </div>
@@ -46,9 +54,9 @@
                 <div class="js-todo-items"></div>
 
                 <script type='text/template' class='new-todo'>
-
                     <div class="new-item new-item-js col-md-6 col-md-offset-3" id='<%=id%>'>
                         <div class="new-box"></div>
+                        <input class="edit-input" placeholder="<%= description %>">
                         <div class="description"><%= description %></div>
                         <button type="button" class="check-btn btn btn-default js-complete-todo">
                             <span class="glyphicon glyphicon-ok"></span>

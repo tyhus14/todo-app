@@ -4,6 +4,8 @@ var firstTemplate = _.template($('.new-todo').text());
 
 todoArray = [];
 
+
+
 	// Add Button
 	$('.add-btn').click(function(){
 
@@ -20,6 +22,10 @@ todoArray = [];
 		$('.js-todo-items').prepend(nextTemplate);
 
 		todoArray.push(todo);
+
+		$('.main-input').val('');
+
+		totalCount();
 
 	});
 
@@ -40,6 +46,10 @@ todoArray = [];
 
 		todoArray.push(todo);
 
+		$('.main-input').val('');
+
+		totalCount();
+
 	});
 
 
@@ -53,6 +63,8 @@ todoArray = [];
 		});
 
 		$(this).parent().remove();
+
+		totalCount();
 	});
 
 	// Complete Button
@@ -62,10 +74,13 @@ todoArray = [];
 
 		var parentId = $(this).parent().attr('id');
 
-		var items = _.findWhere(todoArray, {id: parentId});
+		var item = _.findWhere(todoArray, {id: parentId});
 
-		items.done = true;
+		item.done = true;
 
+		$(this).siblings('.edit-input').hide();
+
+		totalCount()
 	});
 
 	// New Button
@@ -78,7 +93,43 @@ todoArray = [];
 
 		items.done = false;
 
-	})
+		totalCount()
+	});
+
+	// Edit Button
+
+	$('.js-todo-items').on('click', '.pencil-btn', function(){
+		 $(this).siblings('.edit-input').show();
+	});
+
+	$('.js-todo-items').on('blur', '.edit-input', function(){
+		 var parentId = $(this).parent().attr('id');
+		 var newDescription = $(this).val();
+		 var item = _.findWhere(todoArray, {id: parentId});
+		
+		item.description = newDescription
+
+		$(this).siblings('.description').empty().html(newDescription)
+		$(this).hide()
+	});
+
+
+totalCount()
+
+function totalCount(){
+	var allCount = todoArray.length
+	var completedCount = _.where(todoArray, {done: true}).length
+	var activeCount = _.where(todoArray, {done: false}).length
+
+	$('.total-js').empty().html(allCount)
+	$('.completed-js').empty().html(completedCount)
+	$('.active-js').empty().html(activeCount)
+}
+
+
+	
+
+	
 
 	
 });
