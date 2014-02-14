@@ -99,15 +99,18 @@ todoArray = [];
 	// Edit Button
 
 	$('.js-todo-items').on('click', '.pencil-btn', function(){
-		 $(this).siblings('.edit-input').show();
+		$(this).siblings('.edit-input').show();
+
+		$(this).siblings('.edit-input').focus();
+
 	});
 
 	$('.js-todo-items').on('blur', '.edit-input', function(){
-		 var parentId = $(this).parent().attr('id');
-		 var newDescription = $(this).val();
-		 var item = _.findWhere(todoArray, {id: parentId});
+	    var parentId = $(this).parent().attr('id');
+	    var newDescription = $(this).val();
+		var item = _.findWhere(todoArray, {id: parentId});
 		
-		item.description = newDescription
+		item.description = newDescription 
 
 		$(this).siblings('.description').empty().html(newDescription)
 		$(this).hide()
