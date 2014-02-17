@@ -39,7 +39,7 @@
 
             	$(todoArray).remove([0]);
 
-            	expect(todoArray.length).to.deep.equal(1);
+            	expect(todoArray.length).to.equal(1);
             });
         });
     });
