@@ -21,7 +21,7 @@
 
             	expect(todoArray).to.contain(todo);
 
-            	
+
             });
         });
 
@@ -39,7 +39,7 @@
 
             	$(todoArray).remove([0]);
 
-            	expect(todoArray).to.deep.equal({description: "Hi", done: false, id: 2});
+            	expect(todoArray.length).to.deep.equal(1);
             });
         });
     });

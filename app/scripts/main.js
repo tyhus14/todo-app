@@ -129,10 +129,5 @@ function totalCount(){
 	$('.active-js').empty().html(activeCount)
 }
 
-
-	
-
-	
-
 	
 });
