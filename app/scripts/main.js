@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-var firstTemplate = _.template($('.new-todo').text());
+var firstTemplate = _.template($('.new-todo-template').text());
 
 todoArray = [];
 

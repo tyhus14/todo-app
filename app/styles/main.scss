@@ -230,12 +230,7 @@ body {
     @include border-radius(0 0 6px 6px);
 }
 
-.img-responsive {
-        z-index: -5;
-        position: absolute;
-        height: auto;
-        max-width: 100%;
-    }
+
 
 .total-amount {
     position: relative;

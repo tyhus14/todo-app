@@ -51,9 +51,9 @@
                         <button type="button" class="add-btn btn btn-primary add-btn-js">Add</button>
                     </form>
                 </div>
-                <div class="js-todo-items"></div>
+                <div class="js-todo-items todo-items"></div>
 
-                <script type='text/template' class='new-todo'>
+                <script type='text/template' class='new-todo-template'>
                     <div class="new-item new-item-js col-md-6 col-md-offset-3" id='<%=id%>'>
                         <div class="new-box"></div>
                         <input class="edit-input" placeholder="<%= description %>">
@@ -85,6 +85,7 @@
         <!-- bower:js -->
         <script src="bower_components/jquery/jquery.js"></script>
         <script src="bower_components/underscore/underscore.js"></script>
+        <script src="bower_components/backbone/backbone.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -114,7 +115,7 @@
         <!-- endbuild -->
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
+        <script src="scripts/improved.js"></script>
         <!-- endbuild -->
 </body>
 </html>
